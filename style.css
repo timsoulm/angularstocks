@@ -1,0 +1,73 @@
+body {
+    font-size: 14px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #444;
+    margin: 30px 40px;
+    background: #4AA5FF;
+}
+
+
+.controls {
+    margin-bottom: 20px;
+}
+.page-header {
+    margin-top: 20px;
+}
+ul {
+    list-style: none;
+}
+.box {
+    height: 100%;
+    background-color: #fff;
+}
+
+.box-header {
+    background-color: #eee;
+    padding: 0 30px 0 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: move;
+    position: relative;
+}
+.box-header h3 {
+    margin-top: 10px;
+    display: inline-block;
+}
+.box-content {
+    padding: 10px;
+}
+.box-header-btns {
+    top: 15px;
+    right: 10px;
+    cursor: pointer;
+    position: absolute;
+}
+a {
+    color: #ccc;
+}
+form {
+    margin-bottom: 0;
+}
+      
+.positiveChange {
+  background: #11D431;
+}
+
+.negativeChange {
+  background: #D4113A;
+  color: #000;
+}
+
+input {
+  font-size:xx-large;
+  margin: 10px;
+}
+
+input[type=textbox] {
+  width: 85%;
+}
+
+.stockChart {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,0 +1,20 @@
+<div>
+    <form name="_form" class="form-horizontal" ng-submit="submit(_form)">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="dismiss()" aria-hidden="true">&times;</button>
+            <h3>{{currentWidget.company}}</h3>
+        </div>
+
+        <div class="modal-body">
+            <img class="stockChart" ng-src="http://chart.finance.yahoo.com/z?s={{currentWidget.symbol}}&t={{chartGranularity}}m&q=l&l=on&z=s&p=m50,m200"/>
+            <div>
+              Number of months: <input type="textbox" />
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <a ng-click="remove()" class="btn btn-danger pull-left" tabindex="-1"><i class="glyphicon glyphicon-trash"></i>Delete</a>
+            <a ng-click="dismiss()" class="btn btn-default" tabindex="-1"><i class="glyphicon glyphicon-remove"></i>Close</a>
+        </div>
+    </form>
+</div>

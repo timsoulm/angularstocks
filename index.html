@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="financeDashboard">
+
+  <head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="angular-gridster-min.css"/>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body ng-controller="MainController">
+    <form class="searchArea" name="addStock" ng-submit="addNewStock()">
+      <input type="textbox" placeholder="Enter a stock symbol..." ng-model="newStockSymbol" capitalize search/>
+      <input type="submit" value="Add" ng-disabled="!validStock"/>
+    </form>
+    <br>
+    <section class="demo">
+      <div gridster="gridsterOptions">
+        <ul>
+          <li gridster-item="data" ng-repeat="(symbol, data) in stocks">
+            <div class="box" ng-class="data.changeClass" ng-controller="CustomWidgetController">
+              <div class="box-header">
+                <h3>{{symbol}} ({{data.changePercent | percentage}})</h3>
+                <div class="box-header-btns pull-right">
+						      <a title="settings" ng-click="openSettings(data)"><i class="glyphicon glyphicon-cog"></i></a>
+						      <a title="Remove widget" ng-click="remove(symbol)"><i class="glyphicon glyphicon-trash"></i></a>
+					      </div>
+			      	</div>
+      				<div class="box-content">
+      				  <h4>{{data.company}}</h4>
+      				  <h5>Current Price: {{data.price | currency}}</h5>
+      				  <h5>Day Change: {{data.change | currency}}</h5>
+      				  <h5>Day Percent Change: {{data.changePercent | percentage}}</h5>
+      				</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script data-require="angular.js@1.5.0" data-semver="1.5.0" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+    <script src="angular-gridster-min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>-->
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.1.2.js"></script>
+    <script src="script.js"></script>
+    <script src="yahooStocks.js"></script>
+  </body>
+
+</html>
